@@ -27,8 +27,24 @@ document.querySelector(".check-btn").addEventListener("click", () => {
       topScore = score;
       document.querySelector(".top-score").textContent = topScore;
     }
+    document.querySelector(".secret-number").textContent = randomNumber;
+  } else {
+    score -= 1;
+    if (score > 0) {
+      guessInput > randomNumber
+        ? (msg.innerHTML = `DECREASE <i class="fa-solid fa-arrow-trend-down fa-2x"></i>`)
+        : (msg.innerHTML = `INCREASE <i class="fa-solid fa-arrow-trend-up fa-2x"></i>`);
+    } else {
+      msg.innerHTML = `You Lost <i class="fa-regular fa-face-sad-tear fa-2x"></i>`;
+      document.querySelector(".secret-number").textContent = randomNumber;
+      document.querySelector(".check-btn").disabled = true;
+      body.style.background = " black";
+    }
+    document.querySelector(".score").textContent = score;
   }
 });
+
+//* againe basildiginda kontrolleri yap
 
 //? tebrikler bildiniz.
 //? background = green
@@ -47,3 +63,4 @@ document.querySelector(".check-btn").addEventListener("click", () => {
 //? Uzgunuz kaybetiniz.
 
 //* againBtn basildiginda kontrolleri yap
+document.querySelector(".again");
